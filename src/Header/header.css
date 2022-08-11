@@ -1,0 +1,9 @@
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #1F1D1D;
+}
