@@ -1,0 +1,20 @@
+.option_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    color: black;
+    padding: 1rem;
+    background-color: #FBCE43;
+}
+.option_details{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}

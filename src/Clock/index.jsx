@@ -5,7 +5,6 @@ function Clock() {
 
   return (
     <section id="clock">
-   
         <ClockItems />
     </section>
   )
