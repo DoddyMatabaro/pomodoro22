@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './clockItems.css';
 import  Option  from '../Option';
 import ShowClock from '../ShowClock';
@@ -12,14 +12,21 @@ function ClockItems() {
   const increase = (fnx, value) =>{ 
         return (value >= 0) ? fnx(value+1) : null; 
   }
+  
   const decrease = (fnx, value)=>{
         return  (value > 0) ? fnx(value-1) : null;
   }
 
     const { countdown, start, reset, pause, isRunning } = useCountdownTimer({
-      timer: 1000 * 60,
+      timer: 1000 * 60 * sessionTime,
     });
 
+    const decreaseCount = ()=>{
+
+    }
+    useEffect(() => {
+           
+    });
   return (
     <article>
            <div className='options_container'>
