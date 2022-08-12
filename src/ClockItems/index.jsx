@@ -38,7 +38,7 @@ function ClockItems() {
                 />    
            </div>
            <ShowClock value={countdown} />
-           <Buttons />
+           <Buttons state={isRunning} actions={[start, reset, pause]}/>
     </article>
   )
 }
