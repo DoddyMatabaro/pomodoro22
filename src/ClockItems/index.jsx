@@ -9,12 +9,13 @@ import { useCountdownTimer } from 'use-countdown-timer';
 function ClockItems() { 
   const [breakNumber, setBreakNumber] = useState(0);
   const [sessionTime, setSessionTime] = useState(25);
-  const increase = (fnx, value) =>{ 
-        return (value >= 0) ? fnx(value+1) : null; 
+  const increase = (fnx, value, isBreak ) =>{ 
+        return (value >= 0 && value < 60) ? 
+            ((isBreak && value < 60)? fnx(value+1) : fnx(value+1) ) : null; 
   }
   
   const decrease = (fnx, value)=>{
-        return  (value > 0) ? fnx(value-1) : null;
+        return  (value > 0  ) ? fnx(value-1) : null;
   }
 
     const { countdown, start, reset, pause, isRunning } = useCountdownTimer({
@@ -32,14 +33,15 @@ function ClockItems() {
            <div className='options_container'>
                 <Option 
                         value={breakNumber} 
-                        title="Break number"                        
+                        title="Break Length"                        
                         actions={[decrease, increase]}
+                        break={true}
                         params= {setBreakNumber}                        
                 />
 
                 <Option 
                         value={sessionTime} 
-                        title="Session longer"                        
+                        title="Session Length"                        
                         actions={[decrease, increase]}
                         params= {setSessionTime}                        
                 />    

@@ -7,7 +7,7 @@ function Option(props) {
     <div className='option_container'>
         <h3 className="option_title">{props.title}</h3>
         <div className='option_details'  onClick={()=>props.actions}>
-            <FaArrowUp onClick={()=>props.actions[1](props.params, props.value)}/>
+            <FaArrowUp onClick={()=>props.actions[1](props.params, props.value, props.break)}/>
                 <h2>{props.value}</h2>
             <FaArrowDown onClick={()=>props.actions[0](props.params, props.value)} />
         </div>
